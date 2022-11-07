@@ -4,8 +4,8 @@ grammar Final;
  * Parser Rules
  */
 
-assign              : (INTEGER | ID) ARITHMETIC? EQUALS (INTEGER | ID) ;
-arithmetic          : (INTEGER | ID) ARITHMETIC (INTEGER | ID) ;
+assign              : (INTEGER | ID) ARITHMETIC? EQUALS (arithmetic | INTEGER | ID) ;
+arithmetic          : (INTEGER | ID) ARITHMETIC (arithmetic | INTEGER | ID) ;
 
 /*
  * Lexer Rules

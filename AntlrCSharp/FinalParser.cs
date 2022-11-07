@@ -90,6 +90,9 @@ public partial class FinalParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ID(int i) {
 			return GetToken(FinalParser.ID, i);
 		}
+		[System.Diagnostics.DebuggerNonUserCode] public ArithmeticContext arithmetic() {
+			return GetRuleContext<ArithmeticContext>(0);
+		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ARITHMETIC() { return GetToken(FinalParser.ARITHMETIC, 0); }
 		public AssignContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -137,14 +140,27 @@ public partial class FinalParser : Parser {
 
 			State = 8;
 			Match(EQUALS);
-			State = 9;
-			_la = TokenStream.LA(1);
-			if ( !(_la==INTEGER || _la==ID) ) {
-			ErrorHandler.RecoverInline(this);
-			}
-			else {
-				ErrorHandler.ReportMatch(this);
-			    Consume();
+			State = 12;
+			ErrorHandler.Sync(this);
+			switch ( Interpreter.AdaptivePredict(TokenStream,1,Context) ) {
+			case 1:
+				{
+				State = 9;
+				arithmetic();
+				}
+				break;
+			case 2:
+				{
+				State = 10;
+				Match(INTEGER);
+				}
+				break;
+			case 3:
+				{
+				State = 11;
+				Match(ID);
+				}
+				break;
 			}
 			}
 		}
@@ -168,6 +184,9 @@ public partial class FinalParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] ID() { return GetTokens(FinalParser.ID); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ID(int i) {
 			return GetToken(FinalParser.ID, i);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ArithmeticContext arithmetic() {
+			return GetRuleContext<ArithmeticContext>(0);
 		}
 		public ArithmeticContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -194,7 +213,7 @@ public partial class FinalParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 11;
+			State = 14;
 			_la = TokenStream.LA(1);
 			if ( !(_la==INTEGER || _la==ID) ) {
 			ErrorHandler.RecoverInline(this);
@@ -203,16 +222,29 @@ public partial class FinalParser : Parser {
 				ErrorHandler.ReportMatch(this);
 			    Consume();
 			}
-			State = 12;
+			State = 15;
 			Match(ARITHMETIC);
-			State = 13;
-			_la = TokenStream.LA(1);
-			if ( !(_la==INTEGER || _la==ID) ) {
-			ErrorHandler.RecoverInline(this);
-			}
-			else {
-				ErrorHandler.ReportMatch(this);
-			    Consume();
+			State = 19;
+			ErrorHandler.Sync(this);
+			switch ( Interpreter.AdaptivePredict(TokenStream,2,Context) ) {
+			case 1:
+				{
+				State = 16;
+				arithmetic();
+				}
+				break;
+			case 2:
+				{
+				State = 17;
+				Match(INTEGER);
+				}
+				break;
+			case 3:
+				{
+				State = 18;
+				Match(ID);
+				}
+				break;
 			}
 			}
 		}
@@ -229,19 +261,27 @@ public partial class FinalParser : Parser {
 
 	private static char[] _serializedATN = {
 		'\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786', 
-		'\x5964', '\x3', '\x6', '\x12', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
+		'\x5964', '\x3', '\x6', '\x18', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
 		'\t', '\x3', '\x3', '\x2', '\x3', '\x2', '\x5', '\x2', '\t', '\n', '\x2', 
-		'\x3', '\x2', '\x3', '\x2', '\x3', '\x2', '\x3', '\x3', '\x3', '\x3', 
-		'\x3', '\x3', '\x3', '\x3', '\x3', '\x3', '\x2', '\x2', '\x4', '\x2', 
-		'\x4', '\x2', '\x3', '\x3', '\x2', '\x5', '\x6', '\x2', '\x10', '\x2', 
-		'\x6', '\x3', '\x2', '\x2', '\x2', '\x4', '\r', '\x3', '\x2', '\x2', '\x2', 
-		'\x6', '\b', '\t', '\x2', '\x2', '\x2', '\a', '\t', '\a', '\x4', '\x2', 
-		'\x2', '\b', '\a', '\x3', '\x2', '\x2', '\x2', '\b', '\t', '\x3', '\x2', 
-		'\x2', '\x2', '\t', '\n', '\x3', '\x2', '\x2', '\x2', '\n', '\v', '\a', 
-		'\x3', '\x2', '\x2', '\v', '\f', '\t', '\x2', '\x2', '\x2', '\f', '\x3', 
-		'\x3', '\x2', '\x2', '\x2', '\r', '\xE', '\t', '\x2', '\x2', '\x2', '\xE', 
-		'\xF', '\a', '\x4', '\x2', '\x2', '\xF', '\x10', '\t', '\x2', '\x2', '\x2', 
-		'\x10', '\x5', '\x3', '\x2', '\x2', '\x2', '\x3', '\b',
+		'\x3', '\x2', '\x3', '\x2', '\x3', '\x2', '\x3', '\x2', '\x5', '\x2', 
+		'\xF', '\n', '\x2', '\x3', '\x3', '\x3', '\x3', '\x3', '\x3', '\x3', '\x3', 
+		'\x3', '\x3', '\x5', '\x3', '\x16', '\n', '\x3', '\x3', '\x3', '\x2', 
+		'\x2', '\x4', '\x2', '\x4', '\x2', '\x3', '\x3', '\x2', '\x5', '\x6', 
+		'\x2', '\x1A', '\x2', '\x6', '\x3', '\x2', '\x2', '\x2', '\x4', '\x10', 
+		'\x3', '\x2', '\x2', '\x2', '\x6', '\b', '\t', '\x2', '\x2', '\x2', '\a', 
+		'\t', '\a', '\x4', '\x2', '\x2', '\b', '\a', '\x3', '\x2', '\x2', '\x2', 
+		'\b', '\t', '\x3', '\x2', '\x2', '\x2', '\t', '\n', '\x3', '\x2', '\x2', 
+		'\x2', '\n', '\xE', '\a', '\x3', '\x2', '\x2', '\v', '\xF', '\x5', '\x4', 
+		'\x3', '\x2', '\f', '\xF', '\a', '\x5', '\x2', '\x2', '\r', '\xF', '\a', 
+		'\x6', '\x2', '\x2', '\xE', '\v', '\x3', '\x2', '\x2', '\x2', '\xE', '\f', 
+		'\x3', '\x2', '\x2', '\x2', '\xE', '\r', '\x3', '\x2', '\x2', '\x2', '\xF', 
+		'\x3', '\x3', '\x2', '\x2', '\x2', '\x10', '\x11', '\t', '\x2', '\x2', 
+		'\x2', '\x11', '\x15', '\a', '\x4', '\x2', '\x2', '\x12', '\x16', '\x5', 
+		'\x4', '\x3', '\x2', '\x13', '\x16', '\a', '\x5', '\x2', '\x2', '\x14', 
+		'\x16', '\a', '\x6', '\x2', '\x2', '\x15', '\x12', '\x3', '\x2', '\x2', 
+		'\x2', '\x15', '\x13', '\x3', '\x2', '\x2', '\x2', '\x15', '\x14', '\x3', 
+		'\x2', '\x2', '\x2', '\x16', '\x5', '\x3', '\x2', '\x2', '\x2', '\x5', 
+		'\b', '\xE', '\x15',
 	};
 
 	public static readonly ATN _ATN =
