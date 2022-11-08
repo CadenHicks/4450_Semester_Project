@@ -17,5 +17,5 @@ arithmetic          : (INTEGER | ID) ARITHMETIC SPACE (INTEGER | ID) ;
  SPACE              : ' '   ;
  EQUALS             : ('=') ;
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%') ;
- INTEGER            : [0-9]+;
+ INTEGER            : [0-9]+ SPACE;
  ID                 : (LOWERCASE | UPPERCASE)+ SPACE;
