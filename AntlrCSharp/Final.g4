@@ -4,8 +4,8 @@ grammar Final;
  * Parser Rules
  */
 
-assign              : (INTEGER | ID) ARITHMETIC? EQUALS (INTEGER | ID) ;
-arithmetic          : (INTEGER | ID) ARITHMETIC (INTEGER | ID) ;
+assign              : (INTEGER | ID) ARITHMETIC? EQUALS SPACE (INTEGER | ID) ;
+arithmetic          : (INTEGER | ID) ARITHMETIC SPACE (INTEGER | ID) ;
 
 /*
  * Lexer Rules
@@ -13,8 +13,9 @@ arithmetic          : (INTEGER | ID) ARITHMETIC (INTEGER | ID) ;
 
  fragment LOWERCASE : [a-z] ;
  fragment UPPERCASE : [A-Z] ;
-
+ 
+ SPACE              : ' '   ;
  EQUALS             : ('=') ;
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%') ;
  INTEGER            : [0-9]+;
- ID                 : (LOWERCASE | UPPERCASE)+;
+ ID                 : (LOWERCASE | UPPERCASE)+ SPACE;
