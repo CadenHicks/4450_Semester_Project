@@ -31,6 +31,26 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IFinalListener : IParseTreeListener {
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterProg([NotNull] FinalParser.ProgContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitProg([NotNull] FinalParser.ProgContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExpr([NotNull] FinalParser.ExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExpr([NotNull] FinalParser.ExprContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.assign"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

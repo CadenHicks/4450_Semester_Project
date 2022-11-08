@@ -36,6 +36,30 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class FinalBaseListener : IFinalListener {
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterProg([NotNull] FinalParser.ProgContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitProg([NotNull] FinalParser.ProgContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExpr([NotNull] FinalParser.ExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExpr([NotNull] FinalParser.ExprContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.assign"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
