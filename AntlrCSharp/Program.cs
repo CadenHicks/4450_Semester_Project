@@ -3,6 +3,9 @@ using Antlr4.Runtime.Tree;
 using System;
 using System.Text;
 
+
+
+
 namespace AntlrCSharp
 {
     public class Program
@@ -27,8 +30,10 @@ namespace AntlrCSharp
                 FinalParser parser = new FinalParser(tokens);
                 parser.BuildParseTree = true;
                 IParseTree tree = parser.prog();
-                Printer printer = new Printer();
-                ParseTreeWalker.Default.Walk(printer, tree);
+                string stuff = tree.ToStringTree(parser);
+                stuff = stuff.Replace("(expr", "\nexpr");
+                Console.WriteLine(stuff);
+
             }
             catch (Exception ex)
             {
