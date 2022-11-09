@@ -10,9 +10,9 @@ prog: line* EOF;
 //expr:	line;
 
 line				: NEWLINE* assign;	
-assign				: ID ARITHMETIC? EQUALS (string | ID | arithmetic)  NEWLINE;
-string				: SC CHAR SC;
-arithmetic          : (INTEGER | ID) (ARITHMETIC (INTEGER | ID))*;
+assign				: ID ARITHMETIC? EQUALS (literals | ID) NEWLINE;
+literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
+arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
 
 /*
  * Lexer Rules
@@ -26,6 +26,9 @@ arithmetic          : (INTEGER | ID) (ARITHMETIC (INTEGER | ID))*;
  SC					: ('"');
  EQUALS             : ('=');
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');
- INTEGER            : [0-9];
+ INTEGER            : '-'? [0-9]+;
+ BOOLEAN			: ('True' |'true'|'False'|'false');
+ FLOATS				: '-'? [0-9]* '.' [0-9]+;
+ STRING				: ('"'.*?'"');  
  ID                 : (LOWERCASE | UPPERCASE)+;
- CHAR				: (LOWERCASE | UPPERCASE | [0-9]);
+ CHAR				: (LOWERCASE | UPPERCASE | [0-9])+;
