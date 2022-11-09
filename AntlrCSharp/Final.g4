@@ -10,7 +10,7 @@ prog: line* EOF;
 //expr:	line;
 
 line				: NEWLINE* assign;	
-assign				: ID ARITHMETIC? EQUALS (literals | ID) NEWLINE;
+assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic NEWLINE;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
 
@@ -23,7 +23,6 @@ arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
 
  NEWLINE			: [\r\n]+;
  WS					: [ \t]+ -> skip;
- SC					: ('"');
  EQUALS             : ('=');
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');
  INTEGER            : '-'? [0-9]+;
@@ -31,4 +30,3 @@ arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
  FLOATS				: '-'? [0-9]* '.' [0-9]+;
  STRING				: ('"'.*?'"');  
  ID                 : (LOWERCASE | UPPERCASE)+;
- CHAR				: (LOWERCASE | UPPERCASE | [0-9])+;
