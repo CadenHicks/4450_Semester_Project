@@ -3,15 +3,16 @@ grammar Final;
 /*
  * Parser Rules
  */
-prog: expr expr expr EOF;
+//assign              : (INTEGER | ID)  ARITHMETIC? EQUALS (INTEGER | ID) (ARITHMETIC (INTEGER | ID))* NEWLINE;
 
-expr:	expr assign expr 
-	|	assign
-	|	arithmetic
-	;
+prog: line* EOF; 
 
-assign              : (INTEGER | ID)  ARITHMETIC? EQUALS (INTEGER | ID) ARITHMETIC? (INTEGER | ID)? NEWLINE;
-arithmetic          : (INTEGER | ID) ARITHMETIC (INTEGER | ID) NEWLINE;
+//expr:	line;
+
+line				: NEWLINE* assign;	
+assign				: ID ARITHMETIC? EQUALS (string | ID | arithmetic)  NEWLINE;
+string				: SC CHAR SC;
+arithmetic          : (INTEGER | ID) (ARITHMETIC (INTEGER | ID))*;
 
 /*
  * Lexer Rules
@@ -21,8 +22,10 @@ arithmetic          : (INTEGER | ID) ARITHMETIC (INTEGER | ID) NEWLINE;
  fragment UPPERCASE : [A-Z] ;
 
  NEWLINE			: [\r\n]+;
- WS					: [ \t\r\n]+ -> skip;
+ WS					: [ \t]+ -> skip;
+ SC					: ('"');
  EQUALS             : ('=');
- ARITHMETIC         : ('+'|'-'|'*'|'/'|'%') ;
- INTEGER            : [0-9]+;
+ ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');
+ INTEGER            : [0-9];
  ID                 : (LOWERCASE | UPPERCASE)+;
+ CHAR				: (LOWERCASE | UPPERCASE | [0-9]);

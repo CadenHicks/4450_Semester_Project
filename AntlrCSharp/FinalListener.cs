@@ -41,15 +41,15 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitProg([NotNull] FinalParser.ProgContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.line"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterExpr([NotNull] FinalParser.ExprContext context);
+	void EnterLine([NotNull] FinalParser.LineContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.expr"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.line"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitExpr([NotNull] FinalParser.ExprContext context);
+	void ExitLine([NotNull] FinalParser.LineContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.assign"/>.
 	/// </summary>
@@ -60,6 +60,16 @@ public interface IFinalListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitAssign([NotNull] FinalParser.AssignContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.string"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterString([NotNull] FinalParser.StringContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.string"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitString([NotNull] FinalParser.StringContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.arithmetic"/>.
 	/// </summary>
