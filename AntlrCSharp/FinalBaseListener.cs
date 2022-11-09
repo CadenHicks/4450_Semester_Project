@@ -36,6 +36,30 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class FinalBaseListener : IFinalListener {
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterProg([NotNull] FinalParser.ProgContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.prog"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitProg([NotNull] FinalParser.ProgContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.line"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLine([NotNull] FinalParser.LineContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.line"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLine([NotNull] FinalParser.LineContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.assign"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -47,6 +71,18 @@ public partial class FinalBaseListener : IFinalListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAssign([NotNull] FinalParser.AssignContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.string"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterString([NotNull] FinalParser.StringContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.string"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitString([NotNull] FinalParser.StringContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.arithmetic"/>.
 	/// <para>The default implementation does nothing.</para>
