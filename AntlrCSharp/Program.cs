@@ -13,10 +13,10 @@ namespace AntlrCSharp
             {
                 string input = "";
                 StringBuilder text = new StringBuilder();
-                Console.WriteLine("Input the chat.");
+                Console.WriteLine("Input Expression.");
 
                 // to type the EOF character and end the input: use CTRL+D, then press <enter>
-                while ((input = Console.ReadLine()) != "u0004")
+                while ((input = Console.ReadLine()) != "\u0004")
                 {
                     text.AppendLine(input);
                 }
