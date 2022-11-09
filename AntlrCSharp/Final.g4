@@ -4,8 +4,8 @@ grammar Final;
  * Parser Rules
  */
 
-assign              : (INTEGER | ID) ARITHMETIC? EQUALS SPACE (INTEGER | ID) ;
-arithmetic          : (INTEGER | ID) ARITHMETIC SPACE (INTEGER | ID) ;
+assign              : (ID) ARITHMETIC? EQUALS SPACE (INTEGER | ID | FLOAT | BOOLEAN | STRING) ;
+arithmetic          : (INTEGER | ID | STRING | FLOAT) ARITHMETIC (INTEGER | ID | STRING | FLOAT) ;
 
 /*
  * Lexer Rules
@@ -21,4 +21,4 @@ arithmetic          : (INTEGER | ID) ARITHMETIC SPACE (INTEGER | ID) ;
  ID                 : (LOWERCASE | UPPERCASE)+;
  BOOLEAN            : ('True' | 'False' | 'true' | 'false') ;
  FLOAT              : ('-'? [0-9]+ '.' [0-9]+) ;
- STRING             : ('"'(LOWERCASE | UPPERCASE | [0-9] | SPACE | '\t')* '"') ;
+ STRING             : '" '.*' "' ;
