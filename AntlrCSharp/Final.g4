@@ -19,3 +19,6 @@ arithmetic          : (INTEGER | ID) ARITHMETIC SPACE (INTEGER | ID) ;
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%') ;
  INTEGER            : [0-9]+ SPACE;
  ID                 : (LOWERCASE | UPPERCASE)+ SPACE;
+ BOOLEAN            : ('True' | 'False' | 'true' | 'false') ;
+ FLOAT              : ('-'? [0-9]+ '.' [0-9]+) ;
+ CHAR               : ('\''(LOWERCASE | UPPERCASE | [0-9]) '\'') ;
