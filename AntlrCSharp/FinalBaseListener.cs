@@ -72,17 +72,17 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAssign([NotNull] FinalParser.AssignContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.string"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.literals"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterString([NotNull] FinalParser.StringContext context) { }
+	public virtual void EnterLiterals([NotNull] FinalParser.LiteralsContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.string"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.literals"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitString([NotNull] FinalParser.StringContext context) { }
+	public virtual void ExitLiterals([NotNull] FinalParser.LiteralsContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.arithmetic"/>.
 	/// <para>The default implementation does nothing.</para>

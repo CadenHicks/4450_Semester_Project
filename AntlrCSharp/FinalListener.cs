@@ -61,15 +61,15 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitAssign([NotNull] FinalParser.AssignContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.string"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.literals"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterString([NotNull] FinalParser.StringContext context);
+	void EnterLiterals([NotNull] FinalParser.LiteralsContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.string"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.literals"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitString([NotNull] FinalParser.StringContext context);
+	void ExitLiterals([NotNull] FinalParser.LiteralsContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.arithmetic"/>.
 	/// </summary>
