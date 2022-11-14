@@ -80,4 +80,44 @@ public interface IFinalListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitArithmetic([NotNull] FinalParser.ArithmeticContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatements([NotNull] FinalParser.StatementsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatements([NotNull] FinalParser.StatementsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBlock([NotNull] FinalParser.BlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBlock([NotNull] FinalParser.BlockContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElseIf([NotNull] FinalParser.ElseIfContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElseIf([NotNull] FinalParser.ElseIfContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCondition([NotNull] FinalParser.ConditionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCondition([NotNull] FinalParser.ConditionContext context);
 }
