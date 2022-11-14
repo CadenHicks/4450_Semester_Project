@@ -15,7 +15,7 @@ literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
 logic               : (literals | arithmetic) LOGICAL (literals | arithmetic | logic);
 if_statement        : 'if' logic ':' (assign | (NEWLINE block));
-block               : (TAB assign)+;
+block               : (TAB line)+;
 
 /*
  * Lexer Rules
