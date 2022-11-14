@@ -9,12 +9,12 @@ prog: line* EOF;
 
 //expr:	line;
 
-line				: NEWLINE* assign;	
+line				: NEWLINE* (assign | if_statement);	
 assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic NEWLINE;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
 logic               : (literals | arithmetic) LOGICAL (literals | arithmetic | logic);
-if_statement        : 'if' logic ':' (assign | (NEWLINE block));
+if_statement        : 'if' logic ':' (line | (NEWLINE block)) ('else:' (line | block))?;
 block               : (TAB line)+;
 
 /*
@@ -29,7 +29,7 @@ block               : (TAB line)+;
  WS					: [ \t]+ -> skip;
  EQUALS             : ('=');
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');
- LOGICAL            : ( '<' | '>' | '<=' | '>=' | '==' | '!=' | 'and' | 'or');
+ LOGICAL            : ( '<' | '>' | '<=' | '>=' | '==' | '!=' | 'and' | 'or' | 'not');
  INTEGER            : '-'? [0-9]+;
  BOOLEAN			: ('True' |'true'|'False'|'false');
  FLOATS				: '-'? [0-9]* '.' [0-9]+;
