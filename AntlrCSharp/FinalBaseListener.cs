@@ -155,6 +155,30 @@ public partial class FinalBaseListener : IFinalListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCondition([NotNull] FinalParser.ConditionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterConState([NotNull] FinalParser.ConStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitConState([NotNull] FinalParser.ConStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.oneLine"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterOneLine([NotNull] FinalParser.OneLineContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.oneLine"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitOneLine([NotNull] FinalParser.OneLineContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

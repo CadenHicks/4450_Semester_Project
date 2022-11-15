@@ -130,4 +130,24 @@ public interface IFinalListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitCondition([NotNull] FinalParser.ConditionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterConState([NotNull] FinalParser.ConStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitConState([NotNull] FinalParser.ConStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.oneLine"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterOneLine([NotNull] FinalParser.OneLineContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.oneLine"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitOneLine([NotNull] FinalParser.OneLineContext context);
 }
