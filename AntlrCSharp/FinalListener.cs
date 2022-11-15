@@ -91,6 +91,16 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitStatements([NotNull] FinalParser.StatementsContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfState([NotNull] FinalParser.IfStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfState([NotNull] FinalParser.IfStateContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

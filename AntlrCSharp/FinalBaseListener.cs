@@ -108,6 +108,18 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStatements([NotNull] FinalParser.StatementsContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfState([NotNull] FinalParser.IfStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfState([NotNull] FinalParser.IfStateContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
