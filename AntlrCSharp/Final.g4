@@ -9,14 +9,13 @@ prog: line* EOF;
 
 //expr:	line;
 
-line				: NEWLINE* (assign | statements) NEWLINE*;	
+line				: NEWLINE* (assign | statements) NEWLINE;	
 assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
-statements			: IF condition (CONDITIONAL condition)* END NEWLINE (block)+ elseIf* (ELSE END NEWLINE (block)+)?;
-block				: WHITE line NEWLINE;
-elseIf				: ELSE IF condition (CONDITIONAL condition)* END NEWLINE (block)+;
-condition			: (literals | ID) CON (literals | ID);
+statements			: IF condition (CONDITIONAL condition)* END NEWLINE? (block)+ IF* (ELSE END NEWLINE (block)+)?;
+block				: WHITE line;
+condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
 
 /*
  * Lexer Rules
@@ -25,9 +24,9 @@ condition			: (literals | ID) CON (literals | ID);
  fragment LOWERCASE : [a-z] ;
  fragment UPPERCASE : [A-Z] ;
 
- CONDITIONAL		: ('and'|'or');
+ CONDITIONAL		: ('and'|'or'|'not');
  CON				: ('=='|'!='|'<'|'<='|'>'|'>=');
- IF					: ('if');
+ IF					: ('if' | 'elif');
  ELSE				: ('else');
  END				: (':');
  NEWLINE			: [\r\n]+;
