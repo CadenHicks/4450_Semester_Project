@@ -13,8 +13,8 @@ line				: NEWLINE* (assign | statements) NEWLINE*;
 assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
-statements			: IF condition (CONDITIONAL condition)* END NEWLINE? (block)+ WHITE? elif* (WHITE? ELSE END NEWLINE (block)+)?;
-block				: WHITE line;
+statements			: IF condition (CONDITIONAL condition)* END (NEWLINE (block)+ | assign NEWLINE) WHITE? elif* (WHITE? ELSE END NEWLINE? (block)+)?;
+block				: WHITE? line;
 elif				: ELIF condition (CONDITIONAL condition)* END NEWLINE (block)+;
 condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
 
@@ -25,7 +25,7 @@ condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
  fragment LOWERCASE : [a-z] ;
  fragment UPPERCASE : [A-Z] ;
 
- CONDITIONAL		: ('and'|'or');
+ CONDITIONAL		: ('and'|'or'|'not');
  CON				: ('=='|'!='|'<'|'<='|'>'|'>=');
  IF					: ('if');
  ELIF               : ('elif');
