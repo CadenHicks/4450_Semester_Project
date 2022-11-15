@@ -13,7 +13,7 @@ line				: NEWLINE* (assign | statements) NEWLINE*;
 assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
-statements			: IF condition (CONDITIONAL condition)* END NEWLINE (block)+ WHITE? elif* (WHITE? ELSE END NEWLINE (block)+)?;
+statements			: IF condition (CONDITIONAL condition)* END NEWLINE? (block)+ WHITE? elif* (WHITE? ELSE END NEWLINE (block)+)?;
 block				: WHITE line;
 elif				: ELIF condition (CONDITIONAL condition)* END NEWLINE (block)+;
 condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
