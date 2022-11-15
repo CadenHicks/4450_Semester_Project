@@ -1,0 +1,14 @@
+Deliverable 2
+
+x = 3
+y = 2
+z = 1
+
+if x > 2:
+	x = 0
+elif y > 1:
+	y = 0
+else:
+	z = 0
+	
+
