@@ -120,17 +120,17 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitBlock([NotNull] FinalParser.BlockContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elif"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterElseIf([NotNull] FinalParser.ElseIfContext context) { }
+	public virtual void EnterElif([NotNull] FinalParser.ElifContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elif"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitElseIf([NotNull] FinalParser.ElseIfContext context) { }
+	public virtual void ExitElif([NotNull] FinalParser.ElifContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
 	/// <para>The default implementation does nothing.</para>

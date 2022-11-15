@@ -101,15 +101,15 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitBlock([NotNull] FinalParser.BlockContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elif"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterElseIf([NotNull] FinalParser.ElseIfContext context);
+	void EnterElif([NotNull] FinalParser.ElifContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.elseIf"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elif"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitElseIf([NotNull] FinalParser.ElseIfContext context);
+	void ExitElif([NotNull] FinalParser.ElifContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
 	/// </summary>

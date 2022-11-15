@@ -9,12 +9,13 @@ prog: line* EOF;
 
 //expr:	line;
 
-line				: NEWLINE* (assign | statements) NEWLINE;	
+line				: NEWLINE* (assign | statements) NEWLINE*;	
 assign				: ID ARITHMETIC? EQUALS (literals | ID) arithmetic;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*;
-statements			: IF condition (CONDITIONAL condition)* END NEWLINE? (block)+ IF* (ELSE END NEWLINE (block)+)?;
+statements			: IF condition (CONDITIONAL condition)* END NEWLINE (block)+ WHITE? elif* (WHITE? ELSE END NEWLINE (block)+)?;
 block				: WHITE line;
+elif				: ELIF condition (CONDITIONAL condition)* END NEWLINE (block)+;
 condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
 
 /*
@@ -24,9 +25,10 @@ condition			: (literals | ID) arithmetic CON (literals | ID) arithmetic;
  fragment LOWERCASE : [a-z] ;
  fragment UPPERCASE : [A-Z] ;
 
- CONDITIONAL		: ('and'|'or'|'not');
+ CONDITIONAL		: ('and'|'or');
  CON				: ('=='|'!='|'<'|'<='|'>'|'>=');
- IF					: ('if' | 'elif');
+ IF					: ('if');
+ ELIF               : ('elif');
  ELSE				: ('else');
  END				: (':');
  NEWLINE			: [\r\n]+;
