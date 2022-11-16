@@ -33,9 +33,8 @@ public partial class FinalLexer : Lexer {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
-		CONDITIONAL=1, CON=2, IF=3, ELIF=4, ELSE=5, END=6, NEWLINE=7, WHITE=8, 
-		WS=9, EQUALS=10, ARITHMETIC=11, INTEGER=12, BOOLEAN=13, FLOATS=14, STRING=15, 
-		ID=16;
+		CON=1, EQU=2, IF=3, ELIF=4, ELSE=5, END=6, NEWLINE=7, WHITE=8, WS=9, EQUALS=10, 
+		ARITHMETIC=11, INTEGER=12, BOOLEAN=13, FLOATS=14, STRING=15, ID=16;
 	public static string[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -45,9 +44,9 @@ public partial class FinalLexer : Lexer {
 	};
 
 	public static readonly string[] ruleNames = {
-		"LOWERCASE", "UPPERCASE", "CONDITIONAL", "CON", "IF", "ELIF", "ELSE", 
-		"END", "NEWLINE", "WHITE", "WS", "EQUALS", "ARITHMETIC", "INTEGER", "BOOLEAN", 
-		"FLOATS", "STRING", "ID"
+		"LOWERCASE", "UPPERCASE", "CON", "EQU", "IF", "ELIF", "ELSE", "END", "NEWLINE", 
+		"WHITE", "WS", "EQUALS", "ARITHMETIC", "INTEGER", "BOOLEAN", "FLOATS", 
+		"STRING", "ID"
 	};
 
 
@@ -63,9 +62,8 @@ public partial class FinalLexer : Lexer {
 	private static readonly string[] _LiteralNames = {
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, "CONDITIONAL", "CON", "IF", "ELIF", "ELSE", "END", "NEWLINE", "WHITE", 
-		"WS", "EQUALS", "ARITHMETIC", "INTEGER", "BOOLEAN", "FLOATS", "STRING", 
-		"ID"
+		null, "CON", "EQU", "IF", "ELIF", "ELSE", "END", "NEWLINE", "WHITE", "WS", 
+		"EQUALS", "ARITHMETIC", "INTEGER", "BOOLEAN", "FLOATS", "STRING", "ID"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 

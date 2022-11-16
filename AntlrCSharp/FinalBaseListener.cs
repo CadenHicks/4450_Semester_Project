@@ -108,6 +108,18 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStatements([NotNull] FinalParser.StatementsContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStructureIf([NotNull] FinalParser.StructureIfContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStructureIf([NotNull] FinalParser.StructureIfContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -120,29 +132,29 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitIfState([NotNull] FinalParser.IfStateContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elifState"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBlock([NotNull] FinalParser.BlockContext context) { }
+	public virtual void EnterElifState([NotNull] FinalParser.ElifStateContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elifState"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBlock([NotNull] FinalParser.BlockContext context) { }
+	public virtual void ExitElifState([NotNull] FinalParser.ElifStateContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.elif"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elseState"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterElif([NotNull] FinalParser.ElifContext context) { }
+	public virtual void EnterElseState([NotNull] FinalParser.ElseStateContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.elif"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elseState"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitElif([NotNull] FinalParser.ElifContext context) { }
+	public virtual void ExitElseState([NotNull] FinalParser.ElseStateContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -156,29 +168,17 @@ public partial class FinalBaseListener : IFinalListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCondition([NotNull] FinalParser.ConditionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterConState([NotNull] FinalParser.ConStateContext context) { }
+	public virtual void EnterBlock([NotNull] FinalParser.BlockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitConState([NotNull] FinalParser.ConStateContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.oneLine"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterOneLine([NotNull] FinalParser.OneLineContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.oneLine"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitOneLine([NotNull] FinalParser.OneLineContext context) { }
+	public virtual void ExitBlock([NotNull] FinalParser.BlockContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

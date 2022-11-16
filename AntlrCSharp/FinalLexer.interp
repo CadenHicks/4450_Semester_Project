@@ -19,8 +19,8 @@ null
 
 token symbolic names:
 null
-CONDITIONAL
 CON
+EQU
 IF
 ELIF
 ELSE
@@ -39,8 +39,8 @@ ID
 rule names:
 LOWERCASE
 UPPERCASE
-CONDITIONAL
 CON
+EQU
 IF
 ELIF
 ELSE

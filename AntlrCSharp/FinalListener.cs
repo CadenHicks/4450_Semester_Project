@@ -91,6 +91,16 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitStatements([NotNull] FinalParser.StatementsContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStructureIf([NotNull] FinalParser.StructureIfContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStructureIf([NotNull] FinalParser.StructureIfContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -101,25 +111,25 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitIfState([NotNull] FinalParser.IfStateContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elifState"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterBlock([NotNull] FinalParser.BlockContext context);
+	void EnterElifState([NotNull] FinalParser.ElifStateContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elifState"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitBlock([NotNull] FinalParser.BlockContext context);
+	void ExitElifState([NotNull] FinalParser.ElifStateContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.elif"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.elseState"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterElif([NotNull] FinalParser.ElifContext context);
+	void EnterElseState([NotNull] FinalParser.ElseStateContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.elif"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.elseState"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitElif([NotNull] FinalParser.ElifContext context);
+	void ExitElseState([NotNull] FinalParser.ElseStateContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
 	/// </summary>
@@ -131,23 +141,13 @@ public interface IFinalListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitCondition([NotNull] FinalParser.ConditionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterConState([NotNull] FinalParser.ConStateContext context);
+	void EnterBlock([NotNull] FinalParser.BlockContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.conState"/>.
+	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitConState([NotNull] FinalParser.ConStateContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="FinalParser.oneLine"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterOneLine([NotNull] FinalParser.OneLineContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="FinalParser.oneLine"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitOneLine([NotNull] FinalParser.OneLineContext context);
+	void ExitBlock([NotNull] FinalParser.BlockContext context);
 }
