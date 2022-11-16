@@ -9,6 +9,19 @@ x -= 1
 x *= 1
 x /= 1
 x %= 1
+
+x += y
+x -= y
+x *= y
+x /= y
+x %= y
+
+x += 1 + y
+x -= 1 - y
+x *= 1 * y
+x /= 1 / y
+x %= 1 % y
+
 x = y + 1 - 1 * 1 / 1 % 1 + z - z * z / z % z
 
 if 1 < 1:
@@ -28,6 +41,11 @@ if true and true:
 if true or true:
 	x += 1
 if true or not true:
+	x += 1
+	
+if true and x < 2 or false and true or y > z + 7:
+	x += 1
+if x * 2 < y - 5 * z:
 	x += 1
 
 if x > 2:
