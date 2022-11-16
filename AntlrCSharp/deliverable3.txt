@@ -1,7 +1,3 @@
-Deliverable 3
-
-idx = 0
-
 #this is a comment
 
 while idx < 10:
@@ -9,3 +5,14 @@ while idx < 10:
 
 for i in range(5):
 	idx += 1
+	
+while idx > 10: #this is another comment
+	if idx > 2:
+		for i in range(5):
+			x = 10
+			x *= 2
+	for i in range(10):
+		if idx > 2: #this is another comment
+			while idx i < 5:
+			
+		
