@@ -2,6 +2,18 @@ x = 3
 y = 2
 z = 1
 
+a = 1.1
+b = 0.1
+c = "hello"
+
+a += 1.1
+c += "world"
+
+if 1.1 < 2.2:
+	if c == "hello world":
+		a -= b
+
+
 x += 1
 x -= 1
 x *= 1
