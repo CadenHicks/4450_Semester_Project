@@ -16,12 +16,13 @@ arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*
                     | (condition)*
                     ;
 statements          : structureIf;
-structureIf         : ifState WHITE? elifState?? elseState??;
-ifState             : IF condition+ END NEWLINE? (block+|line);
-elifState           : (ELIF condition+ END NEWLINE? (block+ |line))*;
+structureIf         : ifState elifState? elseState?;
+ifState             : IF condition+ END NEWLINE? block+;
+elifState           : (ELIF condition+ END NEWLINE? block+)+;
 elseState           : ELSE END NEWLINE? block+;
 condition           : CON? (literals | ID) arithmetic ((CON | EQU) CON? (literals | ID) arithmetic)? CON*;
-block               : WHITE line;
+block               : INDENT line INDENT?;
+
 /*
  * Lexer Rules
  */
@@ -36,7 +37,7 @@ block               : WHITE line;
  ELSE				: ('else');
  END				: (':');
  NEWLINE			: [\r\n]+;
- WHITE				: [\t]+;
+ INDENT				: [\t];
  WS					: [ ]+ -> skip;
  EQUALS             : ('=');
  ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');

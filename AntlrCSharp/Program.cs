@@ -36,7 +36,8 @@ namespace AntlrCSharp
                 parser.BuildParseTree = true;
                 IParseTree tree = parser.prog();
                 string stuff = tree.ToStringTree(parser);
-                stuff = stuff.Replace("(expr", "\nexpr");
+                stuff = stuff.Replace("(", "\n(");
+                //stuff = stuff.Replace(")", "\n)");
                 Console.WriteLine(stuff);
 
                 //GUI appear
