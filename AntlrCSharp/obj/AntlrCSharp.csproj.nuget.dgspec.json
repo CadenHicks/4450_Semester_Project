@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj": {}
+    "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj": {}
   },
   "projects": {
-    "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj": {
+    "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+        "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
         "projectName": "AntlrCSharp",
-        "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+        "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
         "packagesPath": "/Users/noahbackman/.nuget/packages/",
-        "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/obj/",
+        "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/noahbackman/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Antlr4.Runtime.Standard": {
+              "target": "Package",
+              "version": "[4.9.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

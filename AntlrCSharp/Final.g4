@@ -9,26 +9,26 @@ prog: line* EOF;
 
 //expr:	line;
 
-line				: NEWLINE* (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
-assign				: ID ARITHMETIC? EQUALS CON? (literals | ID) arithmetic;
+line				: (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
+assign				: ID ARITHMETIC? EQUALS CON? (literals | ID | funcCall) arithmetic?;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
-arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))*
-                    | (condition)*
+arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))+
+                    | (condition)+
                     ;
 statements          : structureIf | whileState | funcDef | forState;
 structureIf         : ifState INDENT? elifState?? elseState??;
 ifState             : IF condition+ END NEWLINE? (block+|line);
 elifState           : (ELIF condition+ END NEWLINE? (block+ |line))+;
 elseState           : ELSE END NEWLINE? block+;
-condition           : CON? (literals | ID) arithmetic ((CON | EQU) CON? (literals | ID) arithmetic)? CON*;
+condition           : CON? (literals | ID) arithmetic? ((CON | EQU) CON? (literals | ID) arithmetic?)? CON*;
 block               : INDENT line INDENT?;
-whileState          : WHILE condition+ END NEWLINE? (block+|line);
-forState            : FOR ID IN (literals | ID | funcCall) END NEWLINE? (block+|line);
+whileState          : WHILE condition+ END (NEWLINE block+|line);
+forState            : FOR ID IN (literals | ID | funcCall) END (NEWLINE block+|line);
 funcDef             : DEF ID '(' args ')' END NEWLINE? (block+|line);
 funcCall            : ID '(' ((ID | literals) (',' (ID | literals))*)? ')';
 args                : ('*')?ID (EQU literals)?((',' args)?);
-comment             : '#' ~( '\r' | '\n' )*;
-loopControl         : (BREAK | CONTINUE);
+comment             : '#'.*? NEWLINE;
+loopControl         : (BREAK | CONTINUE | RETURN (ID | literals | arithmetic));
 
 /*
  * Lexer Rules
@@ -47,6 +47,7 @@ loopControl         : (BREAK | CONTINUE);
  IN                 : ('in');
  BREAK              : ('break');
  CONTINUE           : ('continue');
+ RETURN             : ('return');
  DEF                : ('def');
  END				: (':');
  NEWLINE			: [\r\n]+;

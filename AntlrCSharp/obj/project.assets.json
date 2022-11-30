@@ -1,11 +1,41 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Antlr4.Runtime.Standard/4.9.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Antlr4.Runtime.Standard/4.9.2": {
+      "sha512": "NH/CZeP56ERa+1w7HqlQKXMVBlkNHOWrjF3holW5XgUdyDP36Mw0SynoNj6jD7UNqhxc+4YYfOWXajO3U1Q2dw==",
+      "type": "package",
+      "path": "antlr4.runtime.standard/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "antlr4.runtime.standard.4.9.2.nupkg.sha512",
+        "antlr4.runtime.standard.nuspec",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Antlr4.Runtime.Standard >= 4.9.2"
+    ]
   },
   "packageFolders": {
     "/Users/noahbackman/.nuget/packages/": {}
@@ -13,11 +43,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+      "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
       "projectName": "AntlrCSharp",
-      "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+      "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
       "packagesPath": "/Users/noahbackman/.nuget/packages/",
-      "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/obj/",
+      "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/noahbackman/.nuget/NuGet/NuGet.Config"
@@ -43,6 +73,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Antlr4.Runtime.Standard": {
+            "target": "Package",
+            "version": "[4.9.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
