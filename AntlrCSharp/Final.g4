@@ -10,9 +10,9 @@ prog: line* EOF;
 //expr:	line;
 
 line				: (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
-assign				: ID ARITHMETIC? EQUALS CON? (literals | ID | funcCall) arithmetic?;
+assign				: ID (ARITHMETIC | '*')? EQUALS CON? (literals | ID | funcCall) arithmetic?;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
-arithmetic          : (ARITHMETIC (INTEGER | ID | FLOATS | STRING))+
+arithmetic          : ((ARITHMETIC| '*') (INTEGER | ID | FLOATS | STRING))+
                     | (condition)+
                     ;
 statements          : structureIf | whileState | funcDef | forState;
@@ -26,8 +26,8 @@ whileState          : WHILE condition+ END (NEWLINE block+|line);
 forState            : FOR ID IN (literals | ID | funcCall) END (NEWLINE block+|line);
 funcDef             : DEF ID '(' args ')' END NEWLINE? (block+|line);
 funcCall            : ID '(' ((ID | literals) (',' (ID | literals))*)? ')';
-args                : ('*')?ID (EQU literals)?((',' args)?);
-comment             : '#'.*? NEWLINE;
+args                : ID (EQU literals)?((',' args)?);
+comment             : COMMENT NEWLINE;
 loopControl         : (BREAK | CONTINUE | RETURN (ID | literals | arithmetic));
 
 /*
@@ -54,9 +54,11 @@ loopControl         : (BREAK | CONTINUE | RETURN (ID | literals | arithmetic));
  INDENT				: [\t]+;
  WS					: [ ]+ -> skip;
  EQUALS             : ('=');
- ARITHMETIC         : ('+'|'-'|'*'|'/'|'%');
+ STAR               : '*';
+ ARITHMETIC         : ('+'|'-'|STAR|'/'|'%');
  INTEGER            : '-'? [0-9]+;
  BOOLEAN			: ('True' |'true'|'False'|'false');
  FLOATS				: '-'? [0-9]* '.' [0-9]+;
  STRING				: ('"'.*?'"');  
+ COMMENT            : '#' ~( '\r' | '\n' )*;
  ID                 : (LOWERCASE | UPPERCASE)+;
