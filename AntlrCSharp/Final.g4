@@ -1,13 +1,32 @@
 grammar Final;
 
-/*
- * Parser Rules
- */
-//assign              : (INTEGER | ID)  ARITHMETIC? EQUALS (INTEGER | ID) (ARITHMETIC (INTEGER | ID))* NEWLINE;
+tokens { INDENT, DEDENT }
+
+@lexer::header {
+using AntlrDenter;
+}
+
+@lexer::members {
+private DenterHelper denter;
+  
+public override IToken NextToken()
+{
+    if (denter == null)
+    {
+        denter = DenterHelper.Builder()
+            .Nl(NL)
+            .Indent(FinalParser.INDENT)
+            .Dedent(FinalParser.DEDENT)
+            .PullToken(base.NextToken);
+    }
+
+    return denter.NextToken();
+}
+}
+
+NL: ('\r'? '\n' ' '*); //For tabs just switch out ' '* with '\t'*E;
 
 prog: line* EOF; 
-
-//expr:	line;
 
 line				: (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
 assign				: ID (ARITHMETIC | '*')? EQUALS CON? (literals | ID | funcCall) arithmetic?;
