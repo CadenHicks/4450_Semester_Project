@@ -3,7 +3,7 @@ grammar Final;
 tokens { INDENT, DEDENT }
 
 @lexer::header {
-using AntlrDenter;
+using AntlrCSharp;
 }
 
 @lexer::members {
