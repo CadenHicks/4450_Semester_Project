@@ -1,30 +1,30 @@
 grammar Final;
 
-tokens { INDENT, DEDENT }
+// tokens { INDENT, DEDENT }
 
-@lexer::header {
-using AntlrCSharp;
-}
+// @lexer::header {
+// using AntlrCSharp;
+// }
 
-@lexer::members {
-private DenterHelper denter;
+// @lexer::members {
+// private DenterHelper denter;
   
-public override IToken NextToken()
-{
-    if (denter == null)
-    {
-        denter = DenterHelper.Builder()
-            .Nl(NL)
-            .Indent(FinalParser.INDENT)
-            .Dedent(FinalParser.DEDENT)
-            .PullToken(base.NextToken);
-    }
+// public override IToken NextToken()
+// {
+//     if (denter == null)
+//     {
+//         denter = DenterHelper.Builder()
+//             .Nl(NL)
+//             .Indent(FinalParser.INDENT)
+//             .Dedent(FinalParser.DEDENT)
+//             .PullToken(base.NextToken);
+//     }
 
-    return denter.NextToken();
-}
-}
+//     return denter.NextToken();
+// }
+// }
 
-NL: ('\r'? '\n' ' '*); //For tabs just switch out ' '* with '\t'*E;
+// NL: ('\r'? '\n' ' '*); //For tabs just switch out ' '* with '\t'*E;
 
 prog: line* EOF; 
 
