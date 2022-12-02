@@ -28,7 +28,7 @@ grammar Final;
 
 prog: line* EOF; 
 
-line				: (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
+line				: NEWLINE* (assign comment? | statements comment? | loopControl comment? | funcCall comment? | comment ) NEWLINE*;	
 assign				: ID (ARITHMETIC | '*')? EQUALS CON? (literals | ID | funcCall) arithmetic?;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : ((ARITHMETIC| '*') (INTEGER | ID | FLOATS | STRING))+
