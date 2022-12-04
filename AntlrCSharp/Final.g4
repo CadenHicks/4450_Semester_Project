@@ -24,19 +24,22 @@ grammar Final;
  }
  }
 
- //NL: ('\r'* '\n' '\t'*); //For tabs just switch out ' '* with '\t'*E;
- NL: [\r\n\t?]+;
+ NL: ('\r'* '\n' '\t'*); //For tabs just switch out ' '* with '\t'*E;
+ //NL: [\r\n\t?]+;
 
 prog: line* EOF; 
 
-line				: (assign comment?  NL?| statements comment? | loopControl comment?  NL?| funcCall comment?  NL?| comment | NL);
+line				: (assign comment?  NL?| statements comment? NL? | loopControl comment?  NL?| funcCall comment?  NL?| comment | NL);
 assign				: ID (ARITHMETIC | '*')? EQUALS CON? (literals | ID | funcCall) arithmetic?;
 literals			: (STRING | INTEGER | BOOLEAN | FLOATS);
 arithmetic          : ((ARITHMETIC| '*') (INTEGER | ID | FLOATS | STRING))+
                     | (condition)+
                     ;
 statements          : structureIf | whileState | funcDef | forState;
-structureIf         : ifState elifState? elseState?;
+structureIf         : ifState
+                    | ifState elseState
+                    | ifState elifState
+                    | ifState elifState elseState;
 ifState             : IF condition+ END (block|line);
 elifState           : (ELIF condition+ END (block |line))+;
 elseState           : ELSE END block+;

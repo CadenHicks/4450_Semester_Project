@@ -3,6 +3,7 @@ using Antlr4.Runtime.Tree;
 using System;
 using System.Text;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 
 
@@ -25,6 +26,9 @@ namespace AntlrCSharp
                 Console.WriteLine("Please enter file path of the file you wish to test.");
                 filePath = Console.ReadLine();
                 string text = File.ReadAllText(filePath);
+                string pattern = "(\r?\n|\r)(\r?\n|\r)+";
+                string replacement = "\r\n";
+                text = Regex.Replace(text, pattern, replacement);
 
                 // to type the EOF character and end the input: use CTRL+D, then press <enter>
 
