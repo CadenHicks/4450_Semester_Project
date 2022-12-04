@@ -80,4 +80,144 @@ public interface IFinalListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitArithmetic([NotNull] FinalParser.ArithmeticContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatements([NotNull] FinalParser.StatementsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatements([NotNull] FinalParser.StatementsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStructureIf([NotNull] FinalParser.StructureIfContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStructureIf([NotNull] FinalParser.StructureIfContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfState([NotNull] FinalParser.IfStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfState([NotNull] FinalParser.IfStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.elifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElifState([NotNull] FinalParser.ElifStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.elifState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElifState([NotNull] FinalParser.ElifStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.elseState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElseState([NotNull] FinalParser.ElseStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.elseState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElseState([NotNull] FinalParser.ElseStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCondition([NotNull] FinalParser.ConditionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCondition([NotNull] FinalParser.ConditionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBlock([NotNull] FinalParser.BlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBlock([NotNull] FinalParser.BlockContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.whileState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhileState([NotNull] FinalParser.WhileStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.whileState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhileState([NotNull] FinalParser.WhileStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.forState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForState([NotNull] FinalParser.ForStateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.forState"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForState([NotNull] FinalParser.ForStateContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.funcDef"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFuncDef([NotNull] FinalParser.FuncDefContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.funcDef"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFuncDef([NotNull] FinalParser.FuncDefContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.funcCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFuncCall([NotNull] FinalParser.FuncCallContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.funcCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFuncCall([NotNull] FinalParser.FuncCallContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.args"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArgs([NotNull] FinalParser.ArgsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.args"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArgs([NotNull] FinalParser.ArgsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.comment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterComment([NotNull] FinalParser.CommentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.comment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitComment([NotNull] FinalParser.CommentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.loopControl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLoopControl([NotNull] FinalParser.LoopControlContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.loopControl"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLoopControl([NotNull] FinalParser.LoopControlContext context);
 }

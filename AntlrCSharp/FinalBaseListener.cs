@@ -95,6 +95,174 @@ public partial class FinalBaseListener : IFinalListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitArithmetic([NotNull] FinalParser.ArithmeticContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatements([NotNull] FinalParser.StatementsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.statements"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatements([NotNull] FinalParser.StatementsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStructureIf([NotNull] FinalParser.StructureIfContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.structureIf"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStructureIf([NotNull] FinalParser.StructureIfContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfState([NotNull] FinalParser.IfStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.ifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfState([NotNull] FinalParser.IfStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.elifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElifState([NotNull] FinalParser.ElifStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.elifState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElifState([NotNull] FinalParser.ElifStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.elseState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElseState([NotNull] FinalParser.ElseStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.elseState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElseState([NotNull] FinalParser.ElseStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCondition([NotNull] FinalParser.ConditionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.condition"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCondition([NotNull] FinalParser.ConditionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.block"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBlock([NotNull] FinalParser.BlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.block"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBlock([NotNull] FinalParser.BlockContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.whileState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWhileState([NotNull] FinalParser.WhileStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.whileState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWhileState([NotNull] FinalParser.WhileStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.forState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForState([NotNull] FinalParser.ForStateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.forState"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForState([NotNull] FinalParser.ForStateContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.funcDef"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFuncDef([NotNull] FinalParser.FuncDefContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.funcDef"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFuncDef([NotNull] FinalParser.FuncDefContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.funcCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFuncCall([NotNull] FinalParser.FuncCallContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.funcCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFuncCall([NotNull] FinalParser.FuncCallContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.args"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArgs([NotNull] FinalParser.ArgsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.args"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArgs([NotNull] FinalParser.ArgsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.comment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterComment([NotNull] FinalParser.CommentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.comment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitComment([NotNull] FinalParser.CommentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="FinalParser.loopControl"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLoopControl([NotNull] FinalParser.LoopControlContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="FinalParser.loopControl"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLoopControl([NotNull] FinalParser.LoopControlContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

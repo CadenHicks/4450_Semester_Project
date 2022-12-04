@@ -1,11 +1,68 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Antlr4.Runtime.Standard/4.9.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Deque/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/Net20/Deque.dll": {
+            "related": ".XML"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Antlr4.Runtime.Standard/4.9.2": {
+      "sha512": "NH/CZeP56ERa+1w7HqlQKXMVBlkNHOWrjF3holW5XgUdyDP36Mw0SynoNj6jD7UNqhxc+4YYfOWXajO3U1Q2dw==",
+      "type": "package",
+      "path": "antlr4.runtime.standard/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "antlr4.runtime.standard.4.9.2.nupkg.sha512",
+        "antlr4.runtime.standard.nuspec",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
+      ]
+    },
+    "Deque/1.0.1": {
+      "sha512": "YnP8n1kebGka6l19TeQK994QH+9ukwo1kzSpQ/ROyP3cqEszPvCpOFmVOFPolWiwZi3Ir7wX/p2b/Q32QOLiBQ==",
+      "type": "package",
+      "path": "deque/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "deque.1.0.1.nupkg.sha512",
+        "deque.nuspec",
+        "lib/Net20/Deque.XML",
+        "lib/Net20/Deque.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Antlr4.Runtime.Standard >= 4.9.2",
+      "Deque >= 1.0.1"
+    ]
   },
   "packageFolders": {
     "/Users/noahbackman/.nuget/packages/": {}
@@ -13,11 +70,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+      "projectUniqueName": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
       "projectName": "AntlrCSharp",
-      "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
+      "projectPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
       "packagesPath": "/Users/noahbackman/.nuget/packages/",
-      "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/obj/",
+      "outputPath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/noahbackman/.nuget/NuGet/NuGet.Config"
@@ -43,6 +100,16 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Antlr4.Runtime.Standard": {
+            "target": "Package",
+            "version": "[4.9.2, )"
+          },
+          "Deque": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -62,5 +129,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Deque 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Deque",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

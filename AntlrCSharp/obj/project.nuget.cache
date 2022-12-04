@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "aEMi0UcyIDBEzmuqqZ7oQlOcMcHLw4UDcZKWe2kGSFhKEAWisp1PcQpNy1ixG30m+50dTd94j6c+QUYeI6RnfQ==",
+  "dgSpecHash": "/R75zA5o4nLZfHQ1EoJuwFXuY6+887VBWBbnvDf9LSlp+TemTW5MO+5WpsbBa+if678fL5SzarIH7TsDhQ3Xbg==",
   "success": true,
-  "projectFilePath": "/Users/noahbackman/Documents/Fall 2022/PPL/AntlrCSharp/AntlrCSharp.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "/Users/noahbackman/Documents/Fall 2022/PPL/4450_Semester_Project/AntlrCSharp/AntlrCSharp.csproj",
+  "expectedPackageFiles": [
+    "/Users/noahbackman/.nuget/packages/antlr4.runtime.standard/4.9.2/antlr4.runtime.standard.4.9.2.nupkg.sha512",
+    "/Users/noahbackman/.nuget/packages/deque/1.0.1/deque.1.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Deque 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Deque",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
