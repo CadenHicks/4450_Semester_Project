@@ -32,9 +32,9 @@ namespace AntlrCSharp
                 : _dentsBuffer.Dequeue();
             if (_reachedEof) return t;
             IToken r;
-            if (t.Type == _nlToken)
-                r = HandleNewlineToken(t);
-            else if (t.Type == -1)
+            //if (t.Type == _nlToken)
+                // r = HandleNewlineToken(t);
+            if (t.Type == -1)
                 r = _eofHandler.Apply(t);
             else
                 r = t;
@@ -71,42 +71,42 @@ namespace AntlrCSharp
             }
         }
 
-        private IToken HandleNewlineToken(IToken t)
-        {
-            // fast-forward to the next non-NL
-            IToken nextNext = PullToken();
-            while (nextNext.Type == _nlToken)
-            {
-                t = nextNext;
-                nextNext = PullToken();
-            }
+        // private IToken HandleNewlineToken(IToken t)
+        // {
+        //     // fast-forward to the next non-NL
+        //     IToken nextNext = PullToken();
+        //     while (nextNext.Type == _nlToken)
+        //     {
+        //         t = nextNext;
+        //         nextNext = PullToken();
+        //     }
 
-            if (nextNext.Type == -1) return _eofHandler.Apply(nextNext);
-            // nextNext is now a non-NL token; we'll queue it up after any possible dents
+        //     if (nextNext.Type == -1) return _eofHandler.Apply(nextNext);
+        //     // nextNext is now a non-NL token; we'll queue it up after any possible dents
 
-            string nlText = t.Text;
-            int indent = nlText.Length - 1; // every NL has one \n char, so shorten the length to account for it
-            if (indent > 0 && nlText[0] == '\r')
-                --indent; // If the NL also has a \r char, we should account for that as well
-            int prevIndent = _indentations.Get(0);
-            IToken r;
-            if (indent == prevIndent)
-            {
-                r = t; // just a newline
-            }
-            else if (indent > prevIndent)
-            {
-                r = CreateToken(_indentToken, t);
-                _indentations.AddFront(indent);
-            }
-            else
-            {
-                r = UnwindTo(indent, t);
-            }
+        //     string nlText = t.Text;
+        //     int indent = nlText.Length - 1; // every NL has one \n char, so shorten the length to account for it
+        //     if (indent > 0 && nlText[0] == '\r')
+        //         --indent; // If the NL also has a \r char, we should account for that as well
+        //     int prevIndent = _indentations.Get(0);
+        //     IToken r;
+        //     if (indent == prevIndent)
+        //     {
+        //         r = t; // just a newline
+        //     }
+        //     else if (indent > prevIndent)
+        //     {
+        //         r = CreateToken(_indentToken, t);
+        //         _indentations.AddFront(indent);
+        //     }
+        //     else
+        //     {
+        //         r = UnwindTo(indent, t);
+        //     }
 
-            _dentsBuffer.Enqueue(nextNext);
-            return r;
-        }
+        //     _dentsBuffer.Enqueue(nextNext);
+        //     return r;
+        // }
 
         private IToken CreateToken(int tokenType, IToken copyFrom)
         {
