@@ -1,30 +1,5 @@
 grammar Final;
 
-// tokens { INDENT, DEDENT }
-
-// @lexer::header {
-// using AntlrCSharp;
-// }
-
-// @lexer::members {
-// private DenterHelper denter;
-  
-// public override IToken NextToken()
-// {
-//     if (denter == null)
-//     {
-//         denter = DenterHelper.Builder()
-//             .Nl(NL)
-//             .Indent(FinalParser.INDENT)
-//             .Dedent(FinalParser.DEDENT)
-//             .PullToken(base.NextToken);
-//     }
-
-//     return denter.NextToken();
-// }
-// }
-
-// NL: ('\r'? '\n' ' '*); //For tabs just switch out ' '* with '\t'*E;
 
 prog: line* EOF; 
 
@@ -40,7 +15,7 @@ ifState             : IF condition+ END NEWLINE? (block+|line);
 elifState           : (ELIF condition+ END NEWLINE? (block+ |line))+;
 elseState           : ELSE END NEWLINE? block+;
 condition           : CON? (literals | ID) arithmetic? ((CON | EQU) CON? (literals | ID) arithmetic?)? CON*;
-block               : INDENT line INDENT?;
+block               : INDENT? line INDENT?;
 whileState          : WHILE condition+ END (NEWLINE block+|line);
 forState            : FOR ID IN (literals | ID | funcCall) END (NEWLINE block+|line);
 funcDef             : DEF ID '(' args ')' END NEWLINE? (block+|line);

@@ -20,8 +20,8 @@ namespace AntlrCSharp
                 string fileName = "";
                 Console.WriteLine("Please enter the .g4 File name");
                 fileName = Console.ReadLine();  
-                Console.WriteLine("Please enter file path of G4 file.");
-                workingDirectory = Console.ReadLine();
+                /*Console.WriteLine("Please enter file path of G4 file.");
+                workingDirectory = Console.ReadLine();*/
                 Console.WriteLine("Please enter file path of the file you wish to test.");
                 filePath = Console.ReadLine();
                 string text = File.ReadAllText(filePath);
@@ -47,7 +47,7 @@ namespace AntlrCSharp
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
                 process.StartInfo.RedirectStandardInput = true;
-                process.StartInfo.WorkingDirectory = workingDirectory;
+                process.StartInfo.WorkingDirectory = Directory.GetCurrentDirectory();
                 process.StartInfo.Verb = "runas";
                 process.StartInfo.Arguments = command;
                 process.Start();
