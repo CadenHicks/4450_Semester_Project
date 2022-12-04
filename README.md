@@ -14,11 +14,24 @@ The following are the supported features of our simplified python language
 Additionally, this project generates png images of the parse tree generated
 
 ### Our Team
-Henry: Henryufa
-Noah: bargainbin
-Cole: Robinsonjeff
-Caden: CadenHicks
+- Henry: Henryufa
+- Noah: bargainbin
+- Cole: Robinsonjeff
+- Caden: CadenHicks
+
+### Requirements
+- At least Java 1.7
+- Antlr installation according to the pdf provided in this course
+  - https://www.antlr.org/download/antlr-4.9.2-complete.jar
+- Ability to run C# project, our group is using visual studio
 
 ### How to Use this Project
-in progress
+- Write and save a text file that you would like to parse
+- Launch the executable we have provided
+- Enter the path to the file you would like to parse in terminal
+- You will be provided with a GUI parse tree for your enjoyment
+
+### Demo Video
+
+
 
