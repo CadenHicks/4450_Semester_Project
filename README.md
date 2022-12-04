@@ -21,6 +21,8 @@ Additionally, this project generates png images of the parse tree generated
 
 ### Requirements
 - At least Java 1.7
+- Install Antlr v4
+  - https://github.com/antlr/antlr4/blob/master/doc/getting-started.md
 - Antlr installation according to the pdf provided in this course
   - https://www.antlr.org/download/antlr-4.9.2-complete.jar
 - Ability to run C# project, our group is using visual studio
