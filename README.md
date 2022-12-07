@@ -34,9 +34,8 @@ Additionally, this project generates png images of the parse tree generated
 - You will be provided with a GUI parse tree for your enjoyment
 
 ### Demo Video
-
-
-
-## Demo
 https://youtu.be/DOSXUPWqv1U
+
+
+
 
